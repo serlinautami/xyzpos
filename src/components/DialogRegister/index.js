@@ -19,6 +19,9 @@ const DialogRegister = () => {
     remember: false,
   });
 
+  const modal = useSelector((store) => store.modal.modalRegister);
+  const dispatch = useDispatch();
+
   const handleChange = (value, field) => {
     setForm((prevState) => ({
       ...prevState,
@@ -26,18 +29,20 @@ const DialogRegister = () => {
     }));
   };
 
-  const modal = useSelector((store) => store.modal.modalRegister);
-  const dispatch = useDispatch();
-
   const handleClose = () => {
-    dispatch(setModalRegistration(false));
+    dispatch(setModalRegistration({ show: false, formType: "LOGIN" }));
+  };
+
+  const handleChangeForm = (type) => {
+    console.log("asdasda", type);
+    dispatch(setModalRegistration({ formType: type }));
   };
 
   const renderFormRegister = () => {
     return (
       <React.Fragment>
         <h2 className="dialog-register__title">
-          {formType === "REGISTER" ? "Buat Akun" : "Masuk"}
+          {modal.formType === "REGISTER" ? "Buat Akun" : "Masuk"}
         </h2>
         <div className="dialog-register__form">
           <div className="dialog-register__form-group">
@@ -71,7 +76,10 @@ const DialogRegister = () => {
 
           <div className="dialog-register__footer-text">
             Sudah punya akun?{" "}
-            <a onClick={() => setFormType("LOGIN")} href="javascript:void(0)">
+            <a
+              onClick={() => handleChangeForm("LOGIN")}
+              href="javascript:void(0)"
+            >
               Masuk
             </a>
           </div>
@@ -110,7 +118,7 @@ const DialogRegister = () => {
           <div className="dialog-register__footer-text">
             Belum punya akun?{" "}
             <a
-              onClick={() => setFormType("REGISTER")}
+              onClick={() => handleChangeForm("REGISTER")}
               href="javascript:void(0)"
             >
               Daftar
@@ -122,7 +130,7 @@ const DialogRegister = () => {
   };
 
   const renderForm = () => {
-    if (formType === "REGISTER") {
+    if (modal.formType === "REGISTER") {
       return renderFormRegister();
     }
 

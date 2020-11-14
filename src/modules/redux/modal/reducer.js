@@ -4,6 +4,7 @@ import actionTypes from "../actionTypes";
 const initialState = {
   modalRegister: {
     show: false,
+    formType: "LOGIN",
   },
 };
 
@@ -18,7 +19,7 @@ const modal = (state = initialState, action) => {
         ...state,
         modalRegister: {
           ...state.modalRegister,
-          show: action.value,
+          ...action.value,
         },
       };
     default:

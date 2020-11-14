@@ -42,7 +42,7 @@ const Subscription = () => {
   const dispatch = useDispatch();
 
   const handleClickPlan = () => {
-    dispatch(setModalRegistration(true));
+    dispatch(setModalRegistration({ show: true, formType: "LOGIN" }));
   };
   return (
     <React.Fragment>

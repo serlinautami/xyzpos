@@ -9,7 +9,7 @@ const HeroBanner = () => {
   const dispatch = useDispatch();
 
   const handleClickRegister = () => {
-    dispatch(setModalRegistration(true));
+    dispatch(setModalRegistration({ show: true, formType: "REGISTER" }));
   };
   return (
     <div className="herobanner">
