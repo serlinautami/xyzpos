@@ -68,7 +68,6 @@ const Subscription = () => {
           </div>
         </div>
       </div>
-      <DialogRegister />
     </React.Fragment>
   );
 };

@@ -13,6 +13,7 @@ const Button = ({
   outline,
   block,
   className,
+  url,
 }) => {
   const wrapperClass = cx(
     "button",
@@ -26,6 +27,14 @@ const Button = ({
     className
   );
 
+  if (withAnchor) {
+    return (
+      <a href={url} type={type} onClick={onClick} className={wrapperClass}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button type={type} onClick={onClick} className={wrapperClass}>
       {children}
@@ -34,6 +43,7 @@ const Button = ({
 };
 
 Button.propTypes = {
+  url: PropTypes.string,
   className: PropTypes.any,
   block: PropTypes.bool,
   outline: PropTypes.bool,
@@ -45,6 +55,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   className: "",
+  url: "",
   block: false,
   withLink: false,
   withAnchor: false,

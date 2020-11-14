@@ -1,5 +1,6 @@
 .dialog-register {
   display: flex;
+  flex-wrap: wrap;
 }
 .dialog-register__content {
   width: 50%;
@@ -34,4 +35,18 @@
   font-weight: 700;
   text-decoration: none;
   color:#eb414f
+}
+
+
+@media (max-width: 767px) {
+  .dialog-register__title {
+    text-align: center;
+  }
+  .dialog-register__image {
+    margin-bottom: 32px;
+  }
+  .dialog-register__content {
+    width: 100%;
+    padding: 0;
+  }
 }
