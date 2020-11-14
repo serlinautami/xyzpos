@@ -11,10 +11,12 @@ import icReport from "./ic-report.svg";
 import icSetting from "./ic-settings.svg";
 import imgHeroBanner from "./img-hero-banner.svg";
 import imgLogin from "./img-login.svg";
+import icArrowRight from "./ic-arrow-right.svg";
 
 // image
 
 export {
+  icArrowRight,
   icAccount,
   icCheckCircle,
   icClose,

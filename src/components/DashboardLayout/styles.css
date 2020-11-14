@@ -1,0 +1,10 @@
+.dashboard-layout {}
+
+.dashboard-layout__content {
+ position: relative;
+ width: 100%;
+ max-width: 100%;
+ padding-top: 64px;
+ padding-left: calc(350px + 24px); 
+ padding-right: 24px;
+}

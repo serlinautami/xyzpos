@@ -14,18 +14,14 @@ const App = () => {
                 key={index}
                 title={route.title}
                 path={route.path}
-                render={(routeProps) => {
-                  return (
-                    <route.component title={route.title} {...routeProps} />
-                  );
-                }}
+                component={route.component}
                 exact={route.exact}
               />
             );
           })}
         </Switch>
+        <DialogRegister />
       </BrowserRouter>
-      <DialogRegister />
     </React.Fragment>
   );
 };

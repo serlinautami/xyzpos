@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setModalRegistration } from "../../modules";
 import { imgLogin } from "../../assets";
@@ -10,8 +11,13 @@ import Checkbox from "../Checkbox";
 import { icEmail, icPassword, icAccount } from "../../assets";
 import "./styles.css";
 
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 const DialogRegister = () => {
-  const [formType, setFormType] = React.useState("LOGIN");
+  const history = useHistory();
   const [form, setForm] = React.useState({
     name: "",
     email: "",
@@ -23,6 +29,13 @@ const DialogRegister = () => {
   const dispatch = useDispatch();
 
   const handleChange = (value, field) => {
+    const letters = /^[a-z\d\-_\s]+$/i;
+    if (field === "name" && value !== "") {
+      if (!value.match(letters)) {
+        return null;
+      }
+    }
+
     setForm((prevState) => ({
       ...prevState,
       [field]: value,
@@ -34,8 +47,26 @@ const DialogRegister = () => {
   };
 
   const handleChangeForm = (type) => {
-    console.log("asdasda", type);
     dispatch(setModalRegistration({ formType: type }));
+  };
+
+  const handleSubmit = () => {
+    if (!validateEmail(form.email)) {
+      return window.alert("Email harus valid");
+    }
+    if (
+      (modal.formType === "REGISTER" && form.name.length <= 8) ||
+      form.name.length >= 20
+    ) {
+      return window.alert(
+        "Nama harus memiliki 8 karakter dan tidak boleh lebih dari 20 karakter"
+      );
+    }
+
+    localStorage.setItem("user_data", JSON.stringify(form));
+
+    dispatch(setModalRegistration({ show: false }));
+    return history.push("/dashboard");
   };
 
   const renderFormRegister = () => {
@@ -71,7 +102,9 @@ const DialogRegister = () => {
             />
           </div>
           <div className="dialog-register__form-group">
-            <Button block>Masuk</Button>
+            <Button onClick={handleSubmit} block>
+              Daftar
+            </Button>
           </div>
 
           <div className="dialog-register__footer-text">
@@ -113,7 +146,9 @@ const DialogRegister = () => {
             <Checkbox>Ingat Saya</Checkbox>
           </div>
           <div className="dialog-register__form-group">
-            <Button block>Masuk</Button>
+            <Button block onClick={handleSubmit}>
+              Masuk
+            </Button>
           </div>
           <div className="dialog-register__footer-text">
             Belum punya akun?{" "}

@@ -21,3 +21,16 @@ code {
 html{
   scroll-behavior: smooth;
 }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #bbb
+}
+
+th,td {
+  padding: 8px 16px;
+  
+  border: 1px solid #bbb
+}

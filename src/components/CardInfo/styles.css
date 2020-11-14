@@ -1,0 +1,15 @@
+.cardinfo {
+  overflow: hidden;
+  width: 100%;
+  background-color: #eb414f;
+  border-radius: 32px;
+  padding: 24px;
+  color: #fff;
+}
+.cardinfo__title {
+  margin: 0;
+  margin-bottom: 8px;
+}
+.cardinfo__value {
+  margin: 0;
+}

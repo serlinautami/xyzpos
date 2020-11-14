@@ -1,0 +1,28 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  padding: 24px
+}
+
+.profile-info__image {
+  margin-right: 8px;
+}
+
+
+.profile-info__title {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.profile-info__subtitle {
+  opacity: .8;
+}
+
+
+.profile-info__action {
+  font-weight: 800;
+  text-decoration: none;
+  color: #eb414f;
+}
