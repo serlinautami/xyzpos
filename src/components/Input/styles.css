@@ -1,0 +1,40 @@
+.input {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+.input__icon {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+.input__icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.input__field {
+  width: 100%;
+  outline: none;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 3px solid #EB414F;
+  border-radius: 100px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #EB414F
+}
+
+.input__field::placeholder {
+  color: #EB414F
+}
+
+
+.input--with-icon .input__field{
+  padding-left: calc(32px + 24px);
+}

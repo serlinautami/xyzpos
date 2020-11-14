@@ -1,0 +1,27 @@
+.button {
+  outline: none;
+  background-color: transparent;
+  padding: 8px 32px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  font-size: 16px;
+  transition: .3s ease-in-out;
+}
+
+.button--primary {
+  color: #fff;
+  font-weight: 800;
+  background-color: #eb414f;
+  border-color: #eb414f;
+}
+
+.button--outline.button--primary {
+  background-color: transparent;
+  color: #eb414f;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,48 @@
+.subscription {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #F9F9F9;
+}
+.subscription__container {
+  max-width: 1024px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.subscription__title {
+  font-size: 32px;
+  margin-bottom: 42px;
+}
+.subscription__price-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-left: -8px;
+  align-items: center;
+}
+.subscription__price-item {
+  width: 33.333333%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
+}
+
+@media (max-width: 767px) {
+  .subscription {
+    padding-top: 32px;
+  }
+  .subscription__container {
+    max-width: 640px;
+  }
+  .subscription__price-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__title {
+    font-size: 24px;
+    margin-bottom: 42px;
+  }
+}

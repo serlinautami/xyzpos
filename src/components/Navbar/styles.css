@@ -1,0 +1,160 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  max-width: 100%;
+  z-index: 99;
+  transition: .5s ease-in;
+}
+
+.navbar__container {
+  max-width: 1024px;
+  height: 100px;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.navbar__logo-title {
+  margin: 0;
+}
+.navbar__logo-title a {
+  text-decoration: none;
+  color: #222;
+}
+
+.navbar__logo-title a span:nth-child(1) {
+  font-weight: 400;
+}
+.navbar__logo-title a span:nth-child(2) {
+  font-weight: 900;
+}
+
+
+.navbar__menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar__menu-item {
+  margin-left: 32px;
+}
+.navbar__menu-link {
+  text-decoration: none;
+  color: #222222;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+.navbar--scroll {
+  background-color: #eb414f;
+  box-shadow: 0 7px 17px rgba(0,0,0,0.3);
+}
+
+
+.navbar--scroll .navbar__menu-link {
+  color: #fff;
+}
+
+.navbar--scroll .navbar__logo-title a {
+  color: #fff;
+}
+
+
+.navbar--scroll .navbar__button-signin {
+  border-color: #fff;
+  color: #fff;
+}
+
+.navbar__burger {
+  display: none;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  margin-right: 32px;
+  right: 0;
+  cursor: pointer;
+}
+.navbar__burger span {
+  position: absolute;
+  width: 32px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.navbar__burger span:nth-child(1) {
+  top: calc(50% -  10px);
+  width: 24px;
+}
+.navbar__burger span:nth-child(2) {
+}
+.navbar__burger span:nth-child(3) {
+  top: calc(50% +  10px);
+  width: 24px;
+}
+
+.navbar--scroll .navbar__burger span{
+  background-color: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .navbar__container {
+    height: 64px;
+  }
+
+  .navbar__burger {
+    display: block;
+  }
+  .navbar__menu-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    background-color: #eb414f;
+    box-shadow: -4px 4px 17px rgba(0,0,0,0.3);
+    width: 250px;
+    display: block;
+    transition: .3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  .navbar__menu-item {
+    margin: 0;
+  }
+
+  .navbar__menu-link {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    color: #fff
+  }
+
+  .navbar__button-signin {
+    border-color: #fff;
+    color: #fff !important;
+
+    margin-left:24px;
+    margin-top: 24px;
+  }
+
+  .navbar__menu-list--show {
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+

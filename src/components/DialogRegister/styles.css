@@ -1,0 +1,37 @@
+.dialog-register {
+  display: flex;
+}
+.dialog-register__content {
+  width: 50%;
+  padding: 24px;
+}
+
+.dialog-register__image {
+  max-width: 100%;
+  width: 100%;
+}
+
+.dialog-register__title {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+
+.dialog-register__form {}
+.dialog-register__form-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+
+.dialog-register__footer-text {
+  text-align: center;
+}
+
+.dialog-register__footer-text a {
+  font-weight: 700;
+  text-decoration: none;
+  color:#eb414f
+}
