@@ -14,3 +14,7 @@
   margin-bottom: 8px;
 }
 
+.card-table__body {
+  overflow-x: auto;
+}
+

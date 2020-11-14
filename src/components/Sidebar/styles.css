@@ -8,7 +8,10 @@
   width: 100%;
   max-width: 325px;
   z-index: 2;
+  transition: .3s ease-in;
   overflow-x: hidden;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .sidebar__menu-list {
@@ -56,4 +59,9 @@
 }
 
 
-.sidebar--expand {}
+.sidebar--show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+

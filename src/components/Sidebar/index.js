@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ProfileInfo from "../ProfileInfo";
+import cx from "classnames";
 import {
   icClose,
   icHome,
@@ -18,11 +19,15 @@ const sidemenu = [
   { title: "Setting", url: "/setting", icon: icSetting },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ show, onClickToggle }) => {
+  const wrapperClass = cx("sidebar", {
+    "sidebar--show": show,
+  });
+
   return (
-    <div className="sidebar">
+    <div className={wrapperClass}>
       <div className="sidebar__header">
-        <a href="#" className="close">
+        <a onClick={onClickToggle} href="#" className="sidebar__close">
           <img src={icClose} title="" alt="" />
         </a>
       </div>
