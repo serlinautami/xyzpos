@@ -11,11 +11,18 @@ import Checkbox from "../Checkbox";
 import { icEmail, icPassword, icAccount } from "../../assets";
 import "./styles.css";
 
+
+// fungction untuk memvalidasi email
 function validateEmail(email) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
+/**
+ * Komponen Dialog Register
+ * komponen untuk menampilkan modal popup untuk Regsitrasi dan Login
+ * komponen ini ada di landing page
+ */
 const DialogRegister = () => {
   const history = useHistory();
   const [form, setForm] = React.useState({
@@ -42,18 +49,25 @@ const DialogRegister = () => {
     }));
   };
 
+  // handle ketika modal di close 
   const handleClose = () => {
     dispatch(setModalRegistration({ show: false, formType: "LOGIN" }));
   };
 
+  // handle ketika input berubah nilainya
   const handleChangeForm = (type) => {
     dispatch(setModalRegistration({ formType: type }));
   };
 
+  // handle ketika value yang kita input sudah memiliki penghasilan
   const handleSubmit = () => {
+
+    // email di validasi dulu
     if (!validateEmail(form.email)) {
       return window.alert("Email harus valid");
     }
+
+    // fotmt type di cek untuk mendapatkan kondisi login / register
     if (
       (modal.formType === "REGISTER" && form.name.length <= 8) ||
       form.name.length >= 20
@@ -63,12 +77,16 @@ const DialogRegister = () => {
       );
     }
 
+    // data disimpan di localStorage
     localStorage.setItem("user_data", JSON.stringify(form));
 
     dispatch(setModalRegistration({ show: false }));
+
+    // dan di push ke dashboard
     return history.push("/dashboard");
   };
 
+  // rneder untuk konten bagian Registrasi
   const renderFormRegister = () => {
     return (
       <React.Fragment>
@@ -120,6 +138,8 @@ const DialogRegister = () => {
       </React.Fragment>
     );
   };
+
+  // render content untuk bagian login
   const renderFormLogin = () => {
     return (
       <React.Fragment>
@@ -164,6 +184,8 @@ const DialogRegister = () => {
     );
   };
 
+
+  // render content
   const renderForm = () => {
     if (modal.formType === "REGISTER") {
       return renderFormRegister();

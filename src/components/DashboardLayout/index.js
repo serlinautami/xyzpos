@@ -7,6 +7,10 @@ import PropTypes from "prop-types";
 import Sidebar from "../Sidebar";
 import "./styles.css";
 
+/**
+ * Komponen Dashboard Layout
+ * komponen untuk container / layout pada tampilan dashboard setelah login
+ */
 const DashboardLayout = ({ title, children }) => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -17,6 +21,8 @@ const DashboardLayout = ({ title, children }) => {
   React.useEffect(() => {
     document.body.style = "background-color: #F9F9F9;";
 
+    // ketika tidak ada user data pada localStorage dia
+    // redirect ke halaman landing
     if (!userData) {
       history.replace("/");
     } else {
@@ -28,6 +34,7 @@ const DashboardLayout = ({ title, children }) => {
     };
   }, [userData, history, dispatch]);
 
+  // handle untuk toggle pada sidebar di dashboard
   const handleToggleSidebar = () => {
     setSidebar(!sidebar);
   };

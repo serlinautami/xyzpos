@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import "./styles.css";
 
+/**
+ * Komponen Input adalah komponen umum yang reusable
+ * @param {*} param0 
+ */
 const Input = ({ icon, type, onChange, className, inputClass, ...props }) => {
   const wrapperClass = cx("input", className, {
     "input--with-icon": icon,

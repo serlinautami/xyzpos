@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../Button";
 import "./styles.css";
 
+
+// data dummy untuk isian tabel
 const dataTable = [
   {
     jam: "09:21",
@@ -69,6 +71,10 @@ const dataTable = [
   },
 ];
 
+/**
+ * Komponen CardTable
+ * komponen untuk menampilkan isian tabel
+ */
 const CardTable = () => {
   return (
     <div className="card-table">

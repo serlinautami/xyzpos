@@ -1,3 +1,4 @@
+// config untuk aplikasi
 const appInfo = {
   appName: "xyzPos",
   appDomain: "",

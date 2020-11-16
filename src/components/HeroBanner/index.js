@@ -5,6 +5,10 @@ import Button from "../Button";
 import { imgHeroBanner } from "../../assets";
 import "./styles.css";
 
+/**
+ * Komponen hero banner
+ * komponen pertama untuk Landing page
+ */
 const HeroBanner = () => {
   const dispatch = useDispatch();
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { DashboardLayout, PanelInfo, CardTable } from "../../components";
 
+// Komponen dashboard
 const Dashboard = () => {
   const profile = useSelector((store) => store.profile);
   return (

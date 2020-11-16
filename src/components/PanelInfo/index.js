@@ -9,6 +9,10 @@ const dataInfo = [
   { title: "Total Keuntungan", value: "15.000.000" },
 ];
 
+/**
+ * Komponen Panel info
+ * minta tolong minor kek giaman
+ */
 const PanelInfo = () => {
   return (
     <div className="panelinfo">

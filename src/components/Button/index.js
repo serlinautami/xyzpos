@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import "./styles.css";
 
+
+/**
+ * Komponen Button
+ * komponen umum untuk button
+ */
 const Button = ({
   withLink,
   withAnchor,

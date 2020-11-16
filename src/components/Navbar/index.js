@@ -9,6 +9,10 @@ const menus = [
   { title: "Berlangganan", url: "#berlangganan" },
 ];
 
+/**
+ * Komponen Navbar
+ * komponen Navbar adalah komponen yang berada paling atas di aplikasi
+ */
 const Navbar = () => {
   const [changeNavbar, setChangeNavbar] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);

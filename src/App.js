@@ -3,6 +3,9 @@ import { DialogRegister } from "./components";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { appRoutes } from "./routes";
 
+/**
+ * Komponen App untuk basic routing pada web/app
+ */
 const App = () => {
   return (
     <React.Fragment>

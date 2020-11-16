@@ -5,6 +5,8 @@ import CardPlan from "../CardPlan";
 import DialogRegister from "../DialogRegister";
 import "./styles.css";
 
+
+// data plan untuk halaman landing
 const plans = [
   {
     title: "Basic",
@@ -38,6 +40,11 @@ const plans = [
   },
 ];
 
+
+/**
+ * Komponen plan, komponen ini berada pada 
+ * section ke 2 di homepage
+ */
 const Subscription = () => {
   const dispatch = useDispatch();
 

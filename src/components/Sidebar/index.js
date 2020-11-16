@@ -12,6 +12,7 @@ import {
 } from "../../assets";
 import "./styles.css";
 
+// sidebar menu data
 const sidemenu = [
   { title: "Dashboard", url: "/dashboard", icon: icHome },
   { title: "Produk", url: "/product", icon: icProduct },
@@ -19,6 +20,11 @@ const sidemenu = [
   { title: "Setting", url: "/setting", icon: icSetting },
 ];
 
+
+/**
+ * Komponen Sidebar
+ * komponen umum yang ada pada Layout Dashboard
+ */
 const Sidebar = ({ show, onClickToggle }) => {
   const wrapperClass = cx("sidebar", {
     "sidebar--show": show,

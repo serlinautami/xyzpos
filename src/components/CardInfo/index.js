@@ -1,6 +1,10 @@
 import React from "react";
 import "./styles.css";
 
+/**
+ * Komponen CardInfo
+ * komponen pada halaman dashboard
+ */
 const CardInfo = ({ title, value }) => {
   return (
     <div className="cardinfo">

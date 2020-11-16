@@ -4,6 +4,10 @@ import cx from "classnames";
 import { icClose } from "../../assets";
 import "./styles.css";
 
+/**
+ * Komponan Modal
+ * komponen yang reusable untuk menampilkan modal aplikasi
+ */
 const Modal = ({ onModalClose, children, show, onClose }) => {
   const modalClass = cx("modal", {
     "modal--visible": show,

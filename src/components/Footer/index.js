@@ -1,6 +1,10 @@
 import React from "react";
 import "./styles.css";
 
+
+/**
+ * Komponen bagian Footer halaman depan
+ */
 const Footer = () => {
   return (
     <div className="footer">

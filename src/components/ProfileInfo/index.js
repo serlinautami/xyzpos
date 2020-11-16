@@ -4,6 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { icAccount } from "../../assets";
 import "./styles.css";
 
+/**
+ * Komponen Profile Info
+ * komponen yang ada pada sidebar untuk 
+ * menampikan Informasu user profile
+ * yang login
+ */
 const ProfileInfo = () => {
   const profile = useSelector((store) => store.profile);
   const dispatch = useDispatch();

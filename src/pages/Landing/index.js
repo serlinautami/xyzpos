@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, HeroBanner, Subscription, Footer } from "../../components";
 
+// Komponen Landing page
 const Landing = () => {
   return (
     <React.Fragment>
