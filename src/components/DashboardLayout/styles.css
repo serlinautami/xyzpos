@@ -42,3 +42,9 @@
 .dashboard-layout__toggle span:nth-child(2) {
   top: calc(50% + 10px);
 }
+
+@media (max-width:767px){
+  .dashboard-layout__content--sidebar-show {
+    display: none; 
+  }  
+}
